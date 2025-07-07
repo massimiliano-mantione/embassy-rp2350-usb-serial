@@ -1,0 +1,11 @@
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+#runner = "picotool load -t elf"
+runner = "./picotool-run.sh"
+#runner = "elf2uf2-rs -d"
+#runner = "probe-rs run --chip RP235x"
+
+[build]
+target = "thumbv8m.main-none-eabihf"
+
+[env]
+DEFMT_LOG = "info"
